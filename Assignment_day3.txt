@@ -1,0 +1,30 @@
+function checkRange(min,max)
+{
+	if((isNaN(min) || isNaN(max)))
+			return false;
+	if(max-min != 10)
+			return false;
+	return true;		
+}
+
+function dusKaDum()
+{
+	alert("Welcome to 10 ka Dum!You can select a range of 10 from 1 to 100");
+	var min = prompt("Enter minimum range value");
+	var max = prompt("Enter maximum range value");
+	var check = checkRange(min,max);
+	if(check==false)
+		prompt("Enter proper values");
+	var random = (Math.ceil(Math.random()*100));
+	var win = false;
+	for(i=min;i<=max;i++)
+	{
+		if(random == i)
+		{
+			alert("You won!")
+			win = true;
+		}
+	}
+	if(win == false)
+		alert("You lost! The correct number was " + random);
+}
